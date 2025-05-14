@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Writer | Professional Writing Services</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Moul&family=Moulpali&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/9329/9329710.png">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #6C63FF;
+            --secondary-color: #4D44DB;
+            --accent-color: #FF6584;
+            --dark-color: #2D3748;
+            --light-color: #F7FAFC;
+            --gray-color: #718096;
+            --transition: all 0.3s ease;
+        }
+
+        @font-face {
+            font-family: 'Moul';
+            src: url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+        }
+
+        @font-face {
+            font-family: 'Moulpali';
+            src: url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kantumruy Pro', sans-serif;
+            color: var(--dark-color);
+            background-color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Moul', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .model-text {
+            font-family: 'Moulpali', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(255, 101, 132, 0.3);
+        }
+
+        .btn-accent:hover {
+            background: #e04f70;
+            box-shadow: 0 6px 20px rgba(255, 101, 132, 0.4);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 101, 132, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.05) 0%, transparent 70%);
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--dark-color);
+        }
+
+        .hero-title span {
+            color: var(--primary-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray-color);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 20%;
+            bottom: 0;
+            top: 35%;
+            width: 50%;
+            max-width: 300px;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f9f9ff;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .about-image:hover {
+            transform: rotate(0deg);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-text {
+            margin-bottom: 2rem;
+            color: var(--gray-color);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--gray-color);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: #f9f9ff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-category {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin: 0 20px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+        }
+
+        .testimonial-content::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-content::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(255, 101, 132, 0.1) 100%);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Kantumruy Pro', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            color: var(--gray-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-about {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px;
+            border-radius: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-toggle span {
+            padding: 0 15px;
+            font-weight: 600;
+            color: var(--gray-color);
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Language Content */
+        .lang-en {
+            display: block;
+        }
+        
+        .lang-kh {
+            display: none;
+        }
+        
+        body.khmer .lang-en {
+            display: none;
+        }
+        
+        body.khmer .lang-kh {
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .about-container,
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/9329/9329710.png" alt="Logo">
+                <span class="model-text">ContentWriter</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">
+                        <span class="lang-en">Home</span>
+                        <span class="lang-kh">ទំព័រដើម</span>
+                    </a></li>
+                    <li><a href="#about">
+                        <span class="lang-en">About</span>
+                        <span class="lang-kh">អំពីខ្ញុំ</span>
+                    </a></li>
+                    <li><a href="#services">
+                        <span class="lang-en">Services</span>
+                        <span class="lang-kh">សេវាកម្ម</span>
+                    </a></li>
+                    <li><a href="#portfolio">
+                        <span class="lang-en">Portfolio</span>
+                        <span class="lang-kh">ការងារ</span>
+                    </a></li>
+                    <li><a href="#contact">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-kh">ទំនាក់ទំនង</span>
+                    </a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">
+                    <span class="lang-en">Crafting <span>Compelling</span> Content That Converts</span>
+                    <span class="lang-kh">សរសេរអត្ថបទ <span>គួរឱ្យចាប់អារម្មណ៍</span> ដែលបំលែងអ្នកទស្សនាទៅជាអតិថិជន</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="lang-en">Professional content writing services to elevate your brand and engage your audience.</span>
+                    <span class="lang-kh">សេវាកម្មសរសេរអត្ថបទវិជ្ជាជីវៈ ដើម្បីលើកកម្ពស់ម៉ាករបស់អ្នក និងទាក់ទាញទស្សនិកជន។</span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">
+                        <span class="lang-en">Get Started</span>
+                        <span class="lang-kh">ចាប់ផ្តើម</span>
+                    </a>
+                    <a href="#portfolio" class="btn btn-accent">
+                        <span class="lang-en">View Work</span>
+                        <span class="lang-kh">មើលការងារ</span>
+                    </a>
+                </div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/3079/3079976.png" alt="Content Writer" class="hero-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">About Me</span>
+                <span class="lang-kh">អំពីខ្ញុំ</span>
+            </h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Me">
+                </div>
+                <div class="about-content">
+                    <h3>
+                        <span class="lang-en">Professional Content Writer with 5+ Years Experience</span>
+                        <span class="lang-kh">អ្នកសរសេរអត្ថបទវិជ្ជាជីវៈ ជាមួយនឹងបទពិសោធន៍ជាង ៥ឆ្នាំ</span>
+                    </h3>
+                    <p class="about-text">
+                        <span class="lang-en">I'm a passionate content creator dedicated to helping businesses communicate effectively with their target audience. With a background in journalism and digital marketing, I bring a unique perspective to every project.</span>
+                        <span class="lang-kh">ខ្ញុំគឺជាអ្នកបង្កើតខ្លឹមសារដែលមានចំណាប់អារម្មណ៍ខ្លាំង បំណុលខ្លួនដើម្បីជួយអាជីវកម្មទំនាក់ទំនងជាមួយក្រុមអ្នកទិញគោលដៅរបស់ពួកគេឱ្យបានមានប្រសិទ្ធភាព។ ជាមួយនឹងផ្ទៃខាងក្រោយក្នុងវិស័យអត្ថបទសារព័ត៌មាន និងទីផ្សារឌីជីថល ខ្ញុំនាំមកនូវទស្សនៈពិសេសសម្រាប់គម្រោងនីមួយៗ។</span>
+                    </p>
+                    <p class="about-text">
+                        <span class="lang-en">My approach combines research, creativity, and SEO best practices to deliver content that not only reads well but also performs well in search engines and drives conversions.</span>
+                        <span class="lang-kh">វិធីសាកសួររបស់ខ្ញុំផ្សំរវាងការស្រាវជ្រាវ ភាពច្នៃប្រឌិត និងការអនុវត្ត SEO ដ៏ល្អបំផុត ដើម្បីផ្តល់ខ្លឹមសារដែលមិនត្រឹមតែអានរួចរាល់ប៉ុណ្ណោះទេ ប៉ុន្តែថែមទាំងដំណើរការល្អនៅក្នុងម៉ាស៊ីនស្វែងរក និងជំរុញការបំលែង។</span>
+                    </p>
+                    <a href="#contact" class="btn">
+                        <span class="lang-en">Hire Me</span>
+                        <span class="lang-kh">ជួលខ្ញុំ</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">My Services</span>
+                <span class="lang-kh">សេវាកម្មរបស់ខ្ញុំ</span>
+            </h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">Blog Writing</span>
+                        <span class="lang-kh">សរសេរប្លុក</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Engaging, SEO-optimized blog posts that establish your authority and drive organic traffic to your website.</span>
+                        <span class="lang-kh">អត្ថបទប្លុកដែលទាក់ទាញ បង្កើន SEO ដើម្បីបង្កើតអាជ្ញាប័ណ្ណរបស់អ្នក និងជំរុញចរាចរណ៍សរីរាង្គទៅកាន់គេហទំព័ររបស់អ្នក។</span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">Website Content</span>
+                        <span class="lang-kh">ខ្លឹមសារគេហទំព័រ</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Compelling website copy that clearly communicates your value proposition and converts visitors into customers.</span>
+                        <span class="lang-kh">ខ្លឹមសារគេហទំព័រដែលទាក់ទាញ ដែលប្រាប់យ៉ាងច្បាស់អំពីតម្លៃសំខាន់របស់អ្នក និងបំប្លែងអ្នកទស្សនាទៅជាអតិថិជន។</span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">Social Media Content</span>
+                        <span class="lang-kh">ខ្លឹមសារបណ្តាញសង្គម</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Captivating social media posts that increase engagement and grow your following across platforms.</span>
+                        <span class="lang-kh">ប្រកាសបណ្តាញសង្គមដែលទាក់ទាញ ដែលបង្កើនការចូលរួម និងពង្រីកអ្នកតាមដានរបស់អ្នកនៅទូទាំងវេទិកា។</span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">Email Campaigns</span>
+                        <span class="lang-kh">យុទ្ធនាការអ៊ីមែល</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Persuasive email sequences that nurture leads and drive sales with the right message at the right time.</span>
+                        <span class="lang-kh">លំដាប់អ៊ីមែលដែលជំរុញ ដែលចិញ្ចឹមសារគោលដៅ និងជំរុញការលក់ជាមួយនឹងសារត្រឹមត្រូវនៅពេលត្រឹមត្រូវ។</span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">SEO Content</span>
+                        <span class="lang-kh">ខ្លឹមសារ SEO</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Strategically optimized content that ranks well in search engines and attracts qualified traffic.</span>
+                        <span class="lang-kh">ខ្លឹមសារដែលបានបង្កើនប្រសិទ្ធភាពយ៉ាងយុទ្ធសាស្ត្រ ដែលឈានដល់ចំណាត់ថ្នាក់ល្អនៅក្នុងម៉ាស៊ីនស្វែងរក និងទាក់ទាញចរាចរណ៍ដែលមានគុណភាព។</span>
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="service-title">
+                        <span class="lang-en">E-book Writing</span>
+                        <span class="lang-kh">សរសេរសៀវភៅអេឡិចត្រូនិច</span>
+                    </h3>
+                    <p class="service-description">
+                        <span class="lang-en">Comprehensive e-books that showcase your expertise and generate high-quality leads for your business.</span>
+                        <span class="lang-kh">សៀវភៅអេឡិចត្រូនិចដែលពេញលេញ ដែលបង្ហាញពីជំនាញរបស់អ្នក និងបង្កើតសារគោលដៅដែលមានគុណភាពខ្ពស់សម្រាប់អាជីវកម្មរបស់អ្នក។</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">My Portfolio</span>
+                <span class="lang-kh">ការងាររបស់ខ្ញុំ</span>
+            </h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">Tech Blog Articles</span>
+                            <span class="lang-kh">អត្ថបទប្លុកបច្ចេកវិទ្យា</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">Blog Writing</span>
+                            <span class="lang-kh">ការសរសេរប្លុក</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">E-commerce Website</span>
+                            <span class="lang-kh">គេហទំព័រពាណិជ្ជកម្មអេឡិចត្រូនិច</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">Website Content</span>
+                            <span class="lang-kh">ខ្លឹមសារគេហទំព័រ</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">Social Media Campaign</span>
+                            <span class="lang-kh">យុទ្ធនាការបណ្តាញសង្គម</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">Social Media</span>
+                            <span class="lang-kh">បណ្តាញសង្គម</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">Email Sequence</span>
+                            <span class="lang-kh">លំដាប់អ៊ីមែល</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">Email Marketing</span>
+                            <span class="lang-kh">ទីផ្សារអ៊ីមែល</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">Health & Wellness E-book</span>
+                            <span class="lang-kh">សៀវភៅអេឡិចត្រូនិចសុខភាព</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">E-book Writing</span>
+                            <span class="lang-kh">ការសរសេរសៀវភៅអេឡិចត្រូនិច</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1582200371354-28fa73e45a04?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">
+                            <span class="lang-en">SEO Blog Series</span>
+                            <span class="lang-kh">ស៊េរីប្លុក SEO</span>
+                        </h3>
+                        <p class="portfolio-category">
+                            <span class="lang-en">SEO Content</span>
+                            <span class="lang-kh">ខ្លឹមសារ SEO</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Client Testimonials</span>
+                <span class="lang-kh">ការអះអាងរបស់អតិថិជន</span>
+            </h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="lang-en">Working with this content writer has been a game-changer for our business. The quality of writing is exceptional, and our blog traffic has increased by 150% since we started working together.</p>
+                        <p class="lang-kh">ការធ្វើការជាមួយអ្នកសរសេរខ្លឹមសារនេះគឺជាការផ្លាស់ប្តូរល្បែងសម្រាប់អាជីវកម្មរបស់យើង។ គុណភាពនៃការសរសេរគឺពិសេស ហើយចរាចរណ៍ប្លុករបស់យើងបានកើនឡើង 150% ចាប់តាំងពីយើងចាប់ផ្តើមធ្វើការជាមួយគ្នា។</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2518/2518095.png" alt="Client" class="author-image">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>
+                                <span class="lang-en">Marketing Director, TechStart</span>
+                                <span class="lang-kh">អគ្គនាយកទីផ្សារ, TechStart</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-en">Get In Touch</span>
+                <span class="lang-kh">ទាក់ទងមកខ្ញុំ</span>
+            </h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>
+                        <span class="lang-en">Let's Work Together</span>
+                        <span class="lang-kh">សូមធ្វើការជាមួយគ្នា</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Have a project in mind or want to discuss how I can help your business? Feel free to reach out!</span>
+                        <span class="lang-kh">មានគម្រោងក្នុងចិត្តឬចង់ពិភាក្សាអំពីរបៀបដែលខ្ញុំអាចជួយអាជីវកម្មរបស់អ្នក? សូមអារម្មណ៍សេរីក្នុងការទាក់ទង!</span>
+                    </p>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>contact@contentwriter.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>
+                                <span class="lang-en">Phone</span>
+                                <span class="lang-kh">ទូរស័ព្ទ</span>
+                            </h3>
+                            <p>+855 12 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>
+                                <span class="lang-en">Location</span>
+                                <span class="lang-kh">ទីតាំង</span>
+                            </h3>
+                            <p>Phnom Penh, Cambodia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" 
+                                placeholder="Subject"
+                                data-placeholder-en="Subject"
+                                data-placeholder-kh="ប្រធានបទ">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" 
+                                placeholder="Your Message" 
+                                data-placeholder-en="Your Message"
+                                data-placeholder-kh="សាររបស់អ្នក" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <span class="lang-en">Send Message</span>
+                            <span class="lang-kh">ផ្ញើសារ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <span class="model-text">ContentWriter</span>
+                    </a>
+                    <p class="footer-about">
+                        <span class="lang-en">Professional content writing services tailored to your business needs. Let's create something amazing together.</span>
+                        <span class="lang-kh">សេវាកម្មសរសេរខ្លឹមសារវិជ្ជាជីវៈដែលត្រូវបានផ្សារភ្ជាប់តាមតម្រូវការអាជីវកម្មរបស់អ្នក។ ចូរយើងបង្កើតអ្វីដែលអស្ចារ្យជាមួយគ្នា។</span>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">
+                        <span class="lang-en">Quick Links</span>
+                        <span class="lang-kh">តំណភ្ជាប់រហ័ស</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">
+                            <span class="lang-en">Home</span>
+                            <span class="lang-kh">ទំព័រដើម</span>
+                        </a></li>
+                        <li><a href="#about">
+                            <span class="lang-en">About</span>
+                            <span class="lang-kh">អំពីខ្ញុំ</span>
+                        </a></li>
+                        <li><a href="#services">
+                            <span class="lang-en">Services</span>
+                            <span class="lang-kh">សេវាកម្ម</span>
+                        </a></li>
+                        <li><a href="#portfolio">
+                            <span class="lang-en">Portfolio</span>
+                            <span class="lang-kh">ការងារ</span>
+                        </a></li>
+                        <li><a href="#contact">
+                            <span class="lang-en">Contact</span>
+                            <span class="lang-kh">ទំនាក់ទំនង</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">
+                        <span class="lang-en">Services</span>
+                        <span class="lang-kh">សេវាកម្ម</span>
+                    </h3>
+                    <ul class="footer-links">
+                        <li><a href="#">
+                            <span class="lang-en">Blog Writing</span>
+                            <span class="lang-kh">ការសរសេរប្លុក</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="lang-en">Website Content</span>
+                            <span class="lang-kh">ខ្លឹមសារគេហទំព័រ</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="lang-en">Social Media</span>
+                            <span class="lang-kh">បណ្តាញសង្គម</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="lang-en">Email Campaigns</span>
+                            <span class="lang-kh">យុទ្ធនាការអ៊ីមែល</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span class="lang-en">SEO Content</span>
+                            <span class="lang-kh">ខ្លឹមសារ SEO</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">
+                        <span class="lang-en">Newsletter</span>
+                        <span class="lang-kh">ព្រឹត្តិបត្រព័ត៌មាន</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Subscribe to get updates on content writing tips and special offers.</span>
+                        <span class="lang-kh">ជាវដើម្បីទទួលបានព័ត៌មានអំពីគន្លឹះសរសេរខ្លឹមសារ និងការផ្តល់ជូនពិសេស។</span>
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" 
+                                placeholder="Your Email"
+                                data-placeholder-en="Your Email"
+                                data-placeholder-kh="អ៊ីមែលរបស់អ្នក">
+                        </div>
+                        <button type="submit" class="btn">
+                            <span class="lang-en">Subscribe</span>
+                            <span class="lang-kh">ជាវ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="lang-en">2025 - All rights reserved. Provide by Mr. Phekdey PHORN</p>
+                <p class="lang-kh">2025 - រក្សារ​សិទ្ធិ​គ្រប់​យ៉ាង ដោយលោក ផន ភក្ដី។</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <span class="lang-en">EN</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="language-toggle">
+            <span class="slider"></span>
+        </label>
+        <span class="lang-kh">KH</span>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Smooth Scrolling for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Language Toggle
+            const languageToggle = document.getElementById('language-toggle');
+            
+            // Check for saved language preference or use browser language
+            const savedLang = localStorage.getItem('language') || 
+                             (navigator.language.startsWith('km') ? 'kh' : 'en');
+            
+            if (savedLang === 'kh') {
+                document.body.classList.add('khmer');
+                languageToggle.checked = true;
+            }
+            
+            // Update form placeholders based on language
+            updateFormPlaceholders(savedLang);
+            
+            languageToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Switch to Khmer
+                    document.body.classList.add('khmer');
+                    localStorage.setItem('language', 'kh');
+                    updateFormPlaceholders('kh');
+                } else {
+                    // Switch to English
+                    document.body.classList.remove('khmer');
+                    localStorage.setItem('language', 'en');
+                    updateFormPlaceholders('en');
+                }
+            });
+            
+            function updateFormPlaceholders(lang) {
+                const inputs = document.querySelectorAll('[data-placeholder-en], [data-placeholder-kh]');
+                inputs.forEach(input => {
+                    const placeholder = lang === 'kh' ? 
+                        input.getAttribute('data-placeholder-kh') : 
+                        input.getAttribute('data-placeholder-en');
+                    input.setAttribute('placeholder', placeholder);
+                });
+            }
+
+            // Animation on Scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialize elements as invisible
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            window.addEventListener('load', fadeInOnScroll);
+        });
+    </script>
+</body>
+</html>
